@@ -1,0 +1,1313 @@
+/**
+ * Eswatini Judiciary Website
+ * About Page Stylesheet
+ */
+
+/* ===============
+   ANIMATIONS & KEYFRAMES 
+   =============== */
+   @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes borderGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(41, 98, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(41, 98, 255, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(41, 98, 255, 0.5);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* ===============
+   ABOUT HERO SECTION 
+   =============== */
+.about-hero {
+    position: relative;
+    height: 500px;
+    background: url('../images/courthouse-hero.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(26, 35, 126, 0.9), rgba(13, 71, 161, 0.8));
+    z-index: 1;
+}
+
+.about-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    position: relative;
+}
+
+.hero-actions {
+    margin-top: 3rem;
+}
+
+.btn-scroll {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-scroll span {
+    margin-bottom: 0.5rem;
+}
+
+.btn-scroll i {
+    font-size: 1.5rem;
+    animation: fadeInUp 1s infinite alternate;
+}
+
+.btn-scroll:hover {
+    color: var(--accent-color);
+}
+
+.hero-shape {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23121212' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,133.3C672,139,768,181,864,186.7C960,192,1056,160,1152,138.7C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: cover;
+    z-index: 2;
+}
+
+/* Animation classes */
+.reveal-text {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.reveal-fade {
+    opacity: 0;
+    animation: scaleIn 1s ease 0.3s forwards;
+}
+
+.reveal-left {
+    opacity: 0;
+    animation: fadeInLeft 1s ease forwards;
+}
+
+.reveal-right {
+    opacity: 0;
+    animation: fadeInRight 1s ease forwards;
+}
+
+/* ===============
+   ABOUT CONTENT SECTION 
+   =============== */
+.about-content {
+    padding: 5rem 0;
+    background-color: var(--dark-bg);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 50px;
+}
+
+/* ===============
+   SIDEBAR STYLES 
+   =============== */
+.about-sidebar {
+    position: relative;
+}
+
+.sidebar-sticky {
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar-header {
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-header h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.sidebar-header h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem;
+}
+
+.sidebar-nav li {
+    margin-bottom: 5px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.sidebar-link i {
+    width: 24px;
+    margin-right: 10px;
+    font-size: 1.1rem;
+    color: var(--accent-color);
+}
+
+.sidebar-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: var(--accent-color);
+    border-radius: 8px;
+    opacity: 0.1;
+    transition: width 0.3s ease;
+}
+
+.sidebar-link:hover, .sidebar-link.active {
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.sidebar-link:hover::before, .sidebar-link.active::before {
+    width: 100%;
+}
+
+.sidebar-link.active {
+    background-color: rgba(41, 98, 255, 0.1);
+    font-weight: 600;
+}
+
+.sidebar-support {
+    background: linear-gradient(135deg, rgba(26, 35, 126, 0.2), rgba(13, 71, 161, 0.2));
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.sidebar-support h4 {
+    color: #fff;
+    margin-bottom: 0.7rem;
+    font-size: 1.2rem;
+}
+
+.sidebar-support p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+}
+
+.sidebar-support .btn {
+    display: block;
+    text-align: center;
+}
+
+/* ===============
+   MAIN CONTENT STYLES 
+   =============== */
+.about-main {
+    min-height: 100%;
+}
+
+.content-section {
+    margin-bottom: 5rem;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.content-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.section-number {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin: 0;
+}
+
+.section-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-color), transparent);
+    margin-left: 15px;
+}
+
+/* ===============
+   VISION & MISSION SECTION
+   =============== */
+.vision-mission-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 4rem;
+}
+
+.card {
+    background: linear-gradient(135deg, rgba(26, 35, 126, 0.2), rgba(13, 71, 161, 0.2));
+    border-radius: 10px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, rgba(26, 35, 126, 0.3), rgba(13, 71, 161, 0.3));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.card-header h3 {
+    color: #fff;
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.card-body p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.mission-card .card-icon {
+    background: var(--secondary-color);
+}
+
+/* Values Grid */
+.values-container {
+    margin-top: 3rem;
+}
+
+.values-container h3 {
+    color: #fff;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.value-item {
+    text-align: center;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+    background: rgba(41, 98, 255, 0.1);
+}
+
+.value-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.value-item h4 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.value-item p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* ===============
+   JUDICIAL POWER SECTION
+   =============== */
+.judicial-power-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.power-illustration {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.power-illustration img {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+}
+
+.power-description {
+    line-height: 1.7;
+}
+
+.power-description p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.power-description h3 {
+    color: #fff;
+    margin: 2rem 0 1rem;
+    font-size: 1.6rem;
+}
+
+.power-principles {
+    margin-top: 3rem;
+}
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 1.5rem;
+}
+
+.principle-card {
+    background: rgba(26, 35, 126, 0.1);
+    border-radius: 10px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.principle-card:hover {
+    transform: translateY(-5px);
+    background: rgba(41, 98, 255, 0.1);
+}
+
+.principle-number {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.1);
+    line-height: 1;
+}
+
+.principle-card h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    position: relative;
+}
+
+.principle-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    position: relative;
+    margin: 0;
+}
+
+/* ===============
+   JUDICIARY STRUCTURE SECTION
+   =============== */
+.structure-content {
+    margin-top: 2rem;
+}
+
+.court-hierarchy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.hierarchy-level {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.hierarchy-arrow {
+    text-align: center;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.2);
+    width: 100%;
+    margin: 10px 0;
+}
+
+.court-card {
+    background: linear-gradient(135deg, rgba(26, 35, 126, 0.2), rgba(13, 71, 161, 0.2));
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    transition: all 0.3s ease;
+}
+
+.court-card:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, rgba(26, 35, 126, 0.3), rgba(13, 71, 161, 0.3));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.court-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.court-card h3 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.court-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.supreme-court .court-card {
+    max-width: 400px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.supreme-court .court-icon {
+    background: #fff;
+    color: var(--primary-color);
+}
+
+/* Structure Tabs */
+.structure-tabs {
+    margin-top: 3rem;
+}
+
+.tab-navigation {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 5px;
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: #fff;
+}
+
+.tab-btn.active {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.tab-content {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.tab-pane {
+    display: none;
+    animation: fadeInUp 0.5s ease;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.tab-pane h3 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+}
+
+.tab-pane p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.tab-pane ul, .tab-pane ol {
+    color: rgba(255, 255, 255, 0.8);
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tab-pane li {
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+}
+
+.tab-pane strong {
+    color: #fff;
+}
+
+/* ===============
+   CHIEF JUSTICE SECTION
+   =============== */
+.chief-justice-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.cj-profile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 3rem;
+}
+
+.cj-image-container {
+    flex: 0 0 300px;
+}
+
+.cj-image-frame {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cj-image-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(41, 98, 255, 0.3);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.cj-image-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.cj-image-frame:hover img {
+    transform: scale(1.05);
+}
+
+.cj-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.cj-info h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.cj-title {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.cj-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.cj-functions h3 {
+    color: #fff;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.functions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.function-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.function-card:hover {
+    transform: translateY(-5px);
+    background: rgba(41, 98, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.function-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.function-details h4 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.function-details p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ===============
+   INDEPENDENCE SECTION
+   =============== */
+.independence-content {
+    margin-top: 2rem;
+}
+
+.independence-banner {
+    background: url('../images/independence-bg.jpg') no-repeat center center;
+    background-size: cover;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.independence-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(26, 35, 126, 0.9), rgba(13, 71, 161, 0.8));
+    border-radius: 10px;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.banner-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.banner-content h3 {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.independence-description {
+    margin-bottom: 3rem;
+}
+
+.independence-description p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.independence-quote {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.quote-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 4rem;
+    color: rgba(41, 98, 255, 0.1);
+}
+
+.independence-quote blockquote {
+    margin: 0;
+    padding-left: 60px;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.independence-aspects h3 {
+    color: #fff;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+}
+
+.aspects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.aspect-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.aspect-card:hover {
+    transform: translateY(-5px);
+    background: rgba(41, 98, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.aspect-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.aspect-card h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.aspect-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ===============
+   HISTORY SECTION
+   =============== */
+.history-content {
+    margin-top: 2rem;
+}
+
+.history-intro {
+    margin-bottom: 3rem;
+}
+
+.history-intro p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.timeline {
+    position: relative;
+    margin: 3rem 0;
+    padding-left: 50px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 100%;
+    width: 2px;
+    background: var(--accent-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-year {
+    position: absolute;
+    left: -50px;
+    top: 0;
+}
+
+.timeline-year span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    background: rgba(41, 98, 255, 0.1);
+    transform: translateX(10px);
+}
+
+.timeline-content h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.timeline-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.dual-system {
+    margin-top: 4rem;
+}
+
+.dual-system h3 {
+    color: #fff;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.dual-system-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.dual-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.dual-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.common-law:hover {
+    background: rgba(26, 35, 126, 0.2);
+}
+
+.customary-law:hover {
+    background: rgba(77, 182, 172, 0.2);
+}
+
+.dual-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.common-law .dual-icon {
+    background: var(--primary-color);
+}
+
+.customary-law .dual-icon {
+    background: #4DB6AC;
+}
+
+.dual-card h4 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.dual-card ul {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    padding-left: 20px;
+}
+
+.dual-card li {
+    margin-bottom: 10px;
+}
+
+/* ===============
+   CALL TO ACTION SECTION
+   =============== */
+.about-cta {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-outline {
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ===============
+   RESPONSIVE STYLES
+   =============== */
+@media (max-width: 1199.98px) {
+    .functions-grid, .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 991.98px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .about-sidebar {
+        display: none;
+    }
+    
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .vision-mission-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .principles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .functions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dual-system-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tab-navigation {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        flex: 1 0 45%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .tagline {
+        font-size: 1.2rem;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .section-line {
+        display: none;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .function-card {
+        flex-direction: column;
+    }
+    
+    .function-icon {
+        margin-bottom: 15px;
+    }
+    
+    .aspects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .about-hero {
+        height: 400px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .timeline {
+        padding-left: 30px;
+    }
+    
+    .timeline::before {
+        left: 10px;
+    }
+    
+    .timeline-year {
+        left: -30px;
+    }
+    
+    .timeline-year span {
+        width: 30px;
+        height: 30px;
+        font-size: 0.7rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+}
